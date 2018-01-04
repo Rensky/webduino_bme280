@@ -1,13 +1,13 @@
 {
-  "types": ["DHT_chart","DHT_datasetcheck","variables_set"],
-  "category": "catPlus",
+  "types": ["lcd1602_new", "lcd1602_print","lcd1602_clear"],
+  "category": "catMenu1",
   "scripts": [
     "blockly/blocks.js",
     "blockly/javascript.js"
   ],
   "dependencies": [
-    "DHT_chart.js",
-    "https://d3js.org/d3.v4.min.js"
+    "BME280.js",
+    "BME280-blockly.js"
   ],
   "msg": "blockly/msg",
   "blocksMsg": "blockly/msg/blocks",
