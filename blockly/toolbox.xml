@@ -1,36 +1,52 @@
-<category id="catToolText">
+<category id="catDHTchart">
+  
   <block type="variables_set">
-    <field name="VAR">string</field>
+    <field name="VAR">Dataset</field>
     <value name="VALUE">
-      <block type="text_show">
-        <value name="string_">
+      <block type="DHT_datasetcheck">
+        <value name="dataset_">
           <block type="text">
-            <field name="TEXT">Webduino</field>
+            <field name="TEXT">00:00:00,30,60;00:00:01,20,80;</field>
+          </block>
+        </value>
+        <value name="count_">
+          <block type="math_number">
+            <field name="NUM">20</field>
           </block>
         </value>
       </block>
     </value>
-  </block>
-  <block type="text_size">
-    <value name="size_">
+  </block>  
+  
+  <block type="DHT_chart">
+    <field name="type_">LineChart</field>
+    <value name="value_">
+      <block type="text">
+        <field name="TEXT">00:00:00,30,60;00:00:01,20,80;</field>
+      </block>
+    </value>
+    <value name="width_">
       <block type="math_number">
-        <field name="NUM">20</field>
+        <field name="NUM">600</field>
       </block>
     </value>
-  </block>
-  <block type="text_lineheight">
-    <value name="lineheight_">
+    <value name="height_">
       <block type="math_number">
-        <field name="NUM">20</field>
+        <field name="NUM">300</field>
+      </block>
+    </value> 
+    <value name="title_x_">
+      <block type="text">
+        <field name="TEXT">time</field>
       </block>
     </value>
-  </block>
-  <block type="text_color">
-    <value name="color_">
-      <block type="colour_picker">
-        <field name="COLOUR">#ff0000</field>
+    <value name="title_y_">
+      <block type="text">
+        <field name="TEXT">value</field>
       </block>
-    </value>
+    </value>    
   </block>
-  <block type="text_break"></block>
+ 
 </category>
+
+

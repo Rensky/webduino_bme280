@@ -1,12 +1,13 @@
 {
-  "types": ["text_show", "text_size", "text_lineheight", "text_color"],
+  "types": ["DHT_chart","DHT_datasetcheck","variables_set"],
   "category": "catPlus",
   "scripts": [
     "blockly/blocks.js",
     "blockly/javascript.js"
   ],
   "dependencies": [
-    "Text-blockly.js"
+    "DHT_chart.js",
+    "https://d3js.org/d3.v4.min.js"
   ],
   "msg": "blockly/msg",
   "blocksMsg": "blockly/msg/blocks",

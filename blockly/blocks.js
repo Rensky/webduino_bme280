@@ -1,66 +1,52 @@
-Blockly.Blocks['text_show'] = {
-  init: function() {
-  this.appendValueInput('string_')
-      .setCheck('String')
-      .appendField(Blockly.Msg.TEXT_SHOW);
-  this.setOutput(true, null);
-  this.setTooltip('');
-  this.setColour(Blockly.Blocks.colour.HUE);
-  this.setHelpUrl(mainUrl + 'basic/blockly/blockly-information.html' + utmUrl);
-  }
-};
-
-Blockly.Blocks['text_size'] = {
-  init: function () {
-    this.appendValueInput("size_")
-        .appendField(Blockly.Msg.TEXT_SET)
-        .appendField(new Blockly.FieldVariable('string'), 'stringVariable_')
-        .appendField(Blockly.Msg.TEXT_SIZE);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip('');
-    this.setColour(Blockly.Blocks.colour.HUE);
-    this.setHelpUrl(mainUrl + 'basic/blockly/blockly-information.html' + utmUrl);
-  }
-};
-
-Blockly.Blocks['text_lineheight'] = {
-  init: function () {
-    this.appendValueInput("lineheight_")
-        .appendField(Blockly.Msg.TEXT_SET)
-        .appendField(new Blockly.FieldVariable('string'), 'stringVariable_')
-        .appendField(Blockly.Msg.TEXT_LINEHEIGHT);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip('');
-    this.setColour(Blockly.Blocks.colour.HUE);
-    this.setHelpUrl(mainUrl + 'basic/blockly/blockly-information.html' + utmUrl);
-  }
-};
-
-Blockly.Blocks['text_color'] = {
-  init: function () {
-    this.appendValueInput("color_")
-        .appendField(Blockly.Msg.TEXT_SET)
-        .appendField(new Blockly.FieldVariable('string'), 'stringVariable_')
-        .appendField(Blockly.Msg.TEXT_COLOR);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip('');
-    this.setColour(Blockly.Blocks.colour.HUE);
-    this.setHelpUrl(mainUrl + 'basic/blockly/blockly-information.html' + utmUrl);
-  }
-};
-
-Blockly.Blocks['text_break'] = {
+Blockly.Blocks['DHT_chart'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldVariable('string'), 'stringVariable_')
-        .appendField(Blockly.Msg.TEXT_BREAK);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
-    this.setTooltip("");
-    this.setHelpUrl("");
+        .appendField(Blockly.Msg.BLOCK1_SHOW)
+        .appendField(new Blockly.FieldDropdown([["LineChart","LineChart"], ["AreaChart","AreaChart"]]), "type_");     
+    this.appendValueInput("value_")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.VALUE_SHOW);
+    this.appendValueInput("width_")
+        .setCheck("Number")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.WIDTH_SHOW);
+    this.appendValueInput("height_")
+        .setCheck("Number")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.HEIGHT_SHOW);
+    this.appendValueInput("title_x_")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.TITLE_X_SHOW);
+    this.appendValueInput("title_y_")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.TITLE_Y_SHOW);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+    this.setColour(65);
+    this.setHelpUrl(mainUrl + 'basic/blockly/blockly-information.html' + utmUrl);
   }
 };
+
+Blockly.Blocks['DHT_datasetcheck'] = {
+  init: function() {
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)    
+        .appendField(Blockly.Msg.BLOCK2_SHOW);     
+    this.appendValueInput("dataset_")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.DATASET_SHOW);
+    this.appendValueInput("count_")
+        .setCheck("Number")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.COUNT_SHOW);
+    this.setOutput(true, null);
+    this.setTooltip("");
+    this.setColour(65);    
+    this.setHelpUrl(mainUrl + 'basic/blockly/blockly-information.html' + utmUrl);
+  }
+};  

@@ -1,1 +1,1 @@
-MSG.catToolText = "显示文字";
+MSG.catDHTchart = "温湿度关係图";

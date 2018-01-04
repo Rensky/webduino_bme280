@@ -1,1 +1,1 @@
-MSG.catToolText = "Display String";
+MSG.catDHTchart = " DHT Chart";
