@@ -1,52 +1,20 @@
-<category id="catDHTchart">
-  
+<category id="BME280">
   <block type="variables_set">
-    <field name="VAR">Dataset</field>
+    <field name="bme280_setup">BME280</field>
     <value name="VALUE">
-      <block type="DHT_datasetcheck">
-        <value name="dataset_">
-          <block type="text">
-            <field name="TEXT">00:00:00,30,60;00:00:01,20,80;</field>
-          </block>
-        </value>
-        <value name="count_">
-          <block type="math_number">
-            <field name="NUM">20</field>
-          </block>
-        </value>
-      </block>
+      <block type="TEXT">紫外線感測器</block>
     </value>
-  </block>  
-  
-  <block type="DHT_chart">
-    <field name="type_">LineChart</field>
-    <value name="value_">
-      <block type="text">
-        <field name="TEXT">00:00:00,30,60;00:00:01,20,80;</field>
-      </block>
-    </value>
-    <value name="width_">
-      <block type="math_number">
-        <field name="NUM">600</field>
-      </block>
-    </value>
-    <value name="height_">
-      <block type="math_number">
-        <field name="NUM">300</field>
-      </block>
-    </value> 
-    <value name="title_x_">
-      <block type="text">
-        <field name="TEXT">time</field>
-      </block>
-    </value>
-    <value name="title_y_">
-      <block type="text">
-        <field name="TEXT">value</field>
-      </block>
-    </value>    
   </block>
- 
+  <block type="bme280_sencing">
+    <value name="time">
+      <block type="math_number">
+        <field name="NUM">1000</field>
+      </block>
+    </value>
+  </block>
+  <block type="bme280_display">
+    <field name="BME280">BME280</field>
+    <field name="bme280_data">temperature</field>
+  </block>
+
 </category>
-
-

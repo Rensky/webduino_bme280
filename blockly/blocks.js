@@ -1,52 +1,66 @@
-Blockly.Blocks['DHT_chart'] = {
+var mainUrl = 'https://tutorials.webduino.io/zh-tw/docs/';
+var utmUrl = '?utm_source=cloud-blockly&utm_medium=contextMenu&utm_campaign=tutorials';
+
+Blockly.Blocks['bme280_setup'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.BLOCK1_SHOW)
-        .appendField(new Blockly.FieldDropdown([["LineChart","LineChart"], ["AreaChart","AreaChart"]]), "type_");     
-    this.appendValueInput("value_")
-        .setCheck("String")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.VALUE_SHOW);
-    this.appendValueInput("width_")
-        .setCheck("Number")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.WIDTH_SHOW);
-    this.appendValueInput("height_")
-        .setCheck("Number")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.HEIGHT_SHOW);
-    this.appendValueInput("title_x_")
-      .setCheck("String")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.TITLE_X_SHOW);
-    this.appendValueInput("title_y_")
-      .setCheck("String")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.TITLE_Y_SHOW);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip('');
-    this.setColour(65);
-    this.setHelpUrl(mainUrl + 'basic/blockly/blockly-information.html' + utmUrl);
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("設定")
+        .appendField(new Blockly.FieldVariable("BME280"), "BME280")
+        .appendField("腳位為");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl(mainUrl + 'basic/index.html' + utmUrl);
   }
 };
 
-Blockly.Blocks['DHT_datasetcheck'] = {
+Blockly.Blocks['bme280_pin'] = {
   init: function() {
     this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)    
-        .appendField(Blockly.Msg.BLOCK2_SHOW);     
-    this.appendValueInput("dataset_")
-        .setCheck("String")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.DATASET_SHOW);
-    this.appendValueInput("count_")
-        .setCheck("Number")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.COUNT_SHOW);
+        .appendField("BME280，")
+        .appendField("SDA")
+        .appendField(new Blockly.FieldDropdown([["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"], ["9","9"], ["10","10"], ["11","11"], ["12","12"], ["13","13"], ["14","14"], ["15","15"], ["16","16"], ["17","17"], ["18","18"], ["19","19"]]), "uno_Dpin1")
+        .appendField("SCL")
+        .appendField(new Blockly.FieldDropdown([["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"], ["9","9"], ["10","10"], ["11","11"], ["12","12"], ["13","13"], ["14","14"], ["15","15"], ["16","16"], ["17","17"], ["18","18"], ["19","19"]]), "uno_Dpin2");
     this.setOutput(true, null);
-    this.setTooltip("");
-    this.setColour(65);    
-    this.setHelpUrl(mainUrl + 'basic/blockly/blockly-information.html' + utmUrl);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl(mainUrl + 'basic/index.html' + utmUrl);
   }
-};  
+};
+
+Blockly.Blocks['bme280_sencing'] = {
+  init: function() {
+    this.appendValueInput("time")
+        .setCheck("Number")
+        .appendField(new Blockly.FieldVariable("BME280"), "BME280")
+        .appendField("偵測")
+        .appendField(new Blockly.FieldDropdown([["temperature","temperature"], ["humidity","humidity"], ["Atmospheric pressure","Atmospheric pressure"]]), "bme280_data")
+        .appendField("，每");
+    this.appendDummyInput()
+        .appendField("毫(1/1000)秒偵測一次");
+    this.appendStatementInput("bugcan_sencing_go")
+        .setCheck(null)
+        .appendField("執行");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(65);
+ this.setTooltip("");
+ this.setHelpUrl(mainUrl + 'basic/index.html' + utmUrl);
+  }
+};
+
+Blockly.Blocks['bme280_display'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldVariable("BME280"), "BME280")
+        .appendField("所測得目前的")
+        .appendField(new Blockly.FieldDropdown([["temperature","temperature"], ["humidity","humidity"], ["Atmospheric pressure","Atmospheric pressure"]]), "bme280_data");
+    this.setOutput(true, null);
+    this.setColour(20);
+ this.setTooltip("");
+ this.setHelpUrl(mainUrl + 'basic/index.html' + utmUrl);
+  }
+};

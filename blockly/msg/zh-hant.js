@@ -1,1 +1,1 @@
-MSG.catDHTchart = "溫濕度關係圖";
+MSG.BME280 = "BME280溫濕壓感測器";
