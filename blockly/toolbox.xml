@@ -1,8 +1,8 @@
 <category id="BME280">
   <block type="variables_set">
-    <field name="bme280_setup">BME280</field>
+    <field name="VAR">BME280</field>
     <value name="VALUE">
-      <block type="TEXT">紫外線感測器</block>
+      <block type="NULL">紫外線感測器</block>
     </value>
   </block>
   <block type="bme280_sencing">
