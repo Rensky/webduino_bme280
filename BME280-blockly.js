@@ -2,8 +2,8 @@
 
     'use strict';
   
-    window.getBME280= function (board, pin) {
-      return new webduino.module.BME280(board, board.getDigitalPin(pin));
+    window.getBME280= function (board) {
+      return new webduino.module.BME280(board);
     };
   
   }(window, window.webduino));
