@@ -2,7 +2,10 @@
   <block type="variables_set">
     <field name="VAR">BME280</field>
     <value name="VALUE">
-      <block type="bme280_pin">紫外線感測器</block>
+      <block type="bme280_pin">
+        <field name="uno_Dpin1">2</field>
+        <field name="uno_Dpin2">3</field>
+      </block>
     </value>
   </block>
   <block type="bme280_sencing">
