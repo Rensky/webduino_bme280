@@ -20,9 +20,9 @@
     <field name="bme280_data">temperature</field>
   </block> -->
 
-  <block type="bem280_setup">
+  <!-- <block type="bem280_setup">
     <field name="BME280" id="N[dZf,P_7/#nQ(,d+uCH" variabletype="">BME280</field>
-  </block>
+  </block> -->
   <block type="bme280_pin">
     <field name="uno_Dpin1">2</field>
     <field name="uno_Dpin2">2</field>
