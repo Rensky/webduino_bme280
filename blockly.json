@@ -1,5 +1,5 @@
 {
-  "types": ["bme280_setup", "bme280_pin","bme280_sencing","bme280_display"],
+  "types": ["BME280_setup","BME280_pin","BME280_sencing","BME280_display"],
   "category": "catMenu3",
   "scripts": [
     "blockly/blocks.js",

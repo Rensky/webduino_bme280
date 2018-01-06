@@ -1,15 +1,23 @@
-<category id="BME280">
-  <block type="bme280_pin">
-    <field name="uno_Dpin1">2</field>
-    <field name="uno_Dpin2">2</field>
+<category id="catBME280">
+  <block type="variables_set">
+    <field name="VAR">BME280</field>
+    <value name="VALUE">
+      <block type="BME280_pin">
+        <field name="uno_Dpin1">2</field>
+        <field name="uno_Dpin2">3</field>
+      </block>
+    </value>
   </block>
-  <block type="bme280_sencing">
-    <field name="BME280" id="N[dZf,P_7/#nQ(,d+uCH" variabletype="">BME280</field>
+  <block type="BME280_sencing">
+    <value name="time">
+      <field name="bme280_data">temperature</field>
+      <block type="math_number">
+        <field name="NUM">1000</field>
+      </block>
+    </value>
+  </block>
+  <block type="BME280_display">
     <field name="bme280_data">temperature</field>
-  </block>
-  <block type="bme280_display">
-    <field name="BME280" id="N[dZf,P_7/#nQ(,d+uCH" variabletype="">BME280</field>
-    <field name="NAME">temperature</field>
   </block>
 
 </category>

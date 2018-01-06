@@ -1,1 +1,1 @@
-MSG.BME280 = "BME280temperature,humidity,Pressure sensor";
+MSG.catBME280= "BME280 temperature/humidity/atmosphere";
