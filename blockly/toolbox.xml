@@ -1,10 +1,10 @@
 <category id="BME280">
-  <block type="variables_set">
+  <!-- <block type="variables_set">
     <field name="VAR">BME280</field>
     <value name="VALUE">
       <block type="bme280_pin">
-        <field name="uno_Dpin1">2</field>
-        <field name="uno_Dpin2">3</field>
+        <field name="uno_Dpin1">4</field>
+        <field name="uno_Dpin2">5</field>
       </block>
     </value>
   </block>
@@ -18,6 +18,22 @@
   <block type="bme280_display">
     <field name="BME280">BME280</field>
     <field name="bme280_data">temperature</field>
+  </block> -->
+
+  <block type="bem280_setup">
+    <field name="BME280" id="N[dZf,P_7/#nQ(,d+uCH" variabletype="">BME280</field>
+  </block>
+  <block type="bme280_pin">
+    <field name="uno_Dpin1">2</field>
+    <field name="uno_Dpin2">2</field>
+  </block>
+  <block type="bme280_sencing">
+    <field name="BME280" id="N[dZf,P_7/#nQ(,d+uCH" variabletype="">BME280</field>
+    <field name="bme280_data">temperature</field>
+  </block>
+  <block type="bme280_display">
+    <field name="BME280" id="N[dZf,P_7/#nQ(,d+uCH" variabletype="">BME280</field>
+    <field name="NAME">temperature</field>
   </block>
 
 </category>
